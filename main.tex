@@ -45,6 +45,16 @@
 
 \begin{multicols}{3}
 
+  \begin{topic}{Topology}
+    Pair $(M, d)$ is metric space where $M$ is a set and $d: M \times M \rightarrow [0,\infty)$
+    is a metric. It satisfies
+    \begin{enumerate}
+      \item $d(x, z) \leq d(x, y) + d(y, z)$
+      \item $d(x, y) = d(y, x)$
+      \item $d(x, y) = 0 \Leftrightarrow x = y$
+    \end{enumerate}
+  \end{topic}
+
   \begin{topic}{Probability}
     Probability space is $(\Omega, \F, \prob)$.
     Probability function is \emph{any} function $\prob : \F \rightarrow \R$
@@ -90,7 +100,7 @@
   \begin{topic}{Distributions}
     \begin{tabular}{cccc}
       Distribution & PMF & EV & Variance \\
-      $\bernoulli(p)$ & $p$ & $p$ & $p(1-p)$ \\
+      $\bernoulli(p)$ & $p$ & $p$ & $pq$ \\
       $\binomial(n,p)$ & $\binom{n}{k} p^k q^{n-k}$ & $np$ & $npq$ \\
       $\geometric(p)$ & $q^{n-1}p$ & $\frac{1}{p}$ & $\frac{1-p}{p^2}$ \\
     \end{tabular}
