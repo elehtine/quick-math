@@ -5,7 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 
-\usepackage[right=10mm, left=10mm, top=10mm, bottom=10mm]{geometry}
+\usepackage[right=5mm, left=5mm, top=5mm, bottom=5mm]{geometry}
 \usepackage{multicol}
 
 \usepackage{tikz}
@@ -22,12 +22,15 @@
   ]}
 {\end{mdframed}}
 
+\DeclareMathOperator{\prob}{\mathbb{P}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\F}{\mathcal{F}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\given}{\: \vert \:}
 
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\given}{\: \vert \:}
+\DeclareMathOperator{\bernoulli}{Bernoulli}
+\DeclareMathOperator{\binomial}{Binomial}
+\DeclareMathOperator{\geometric}{Geom}
 
 \newcommand{\dx}[1][x]{\,d#1}
 \newcommand{\abint}{\int_a^b}
@@ -82,6 +85,15 @@
     \[
       \E[ f(X) ] \geq f( \E[X] )
     \]
+  \end{topic}
+
+  \begin{topic}{Distributions}
+    \begin{tabular}{cccc}
+      Distribution & PMF & EV & Variance \\
+      $\bernoulli(p)$ & $p$ & $p$ & $p(1-p)$ \\
+      $\binomial(n,p)$ & $\binom{n}{k} p^k q^{n-k}$ & $np$ & $npq$ \\
+      $\geometric(p)$ & $q^{n-1}p$ & $\frac{1}{p}$ & $\frac{1-p}{p^2}$ \\
+    \end{tabular}
   \end{topic}
 
   \begin{topic}{Intermediate value}{
