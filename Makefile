@@ -1,9 +1,9 @@
 LATEXCMD = pdflatex -shell-escape -output-directory build
 
-.PHONY: all
-all: | build
-	$(LATEXCMD) main.tex
-	cp build/main.pdf main.pdf
+
+quick-math.pdf: | build
+	$(LATEXCMD) quick-math.tex
+	cp build/quick-math.pdf quick-math.pdf
 
 build:
 	mkdir -p build
