@@ -1,0 +1,46 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{quick-math}
+
+\pagestyle{empty}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage[right=5mm, left=5mm, top=5mm, bottom=5mm]{geometry}
+\usepackage{multicol}
+
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\newenvironment{topic}[1]
+{\begin{mdframed}[
+    linecolor=black,
+    frametitle=#1,
+    frametitlebackgroundcolor=black!5,
+  ]}
+{\end{mdframed}}
+
+
+\DeclareMathOperator{\prob}{\mathbb{P}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\F}{\mathcal{F}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\given}{\: \vert \:}
+
+\DeclareMathOperator{\bernoulli}{Bernoulli}
+\DeclareMathOperator{\binomial}{Binomial}
+\DeclareMathOperator{\geometric}{Geom}
+
+\newcommand{\dx}[1][x]{\,d#1}
+\newcommand{\abint}{\int_a^b}
+\newcommand{\inftyint}[1]{\int_{#1}^\infty}
+\newcommand{\inftylim}[1]{\lim_{#1 \rightarrow \infty}}
+\newcommand{\summation}[1][i = 1]{\sum_{#1}^{n}}
+
+
