@@ -1,0 +1,44 @@
+\begin{definition}{LU Decomposition}
+  For an invertible matrix $A$, factorization into a lower triangular
+  matrix $L$ and an upper triangular matrix $U$.
+  \[
+    A = LU
+  \]
+  Used for solving linear systems $Ax=b$ and computing determinants.
+\end{definition}
+
+\begin{definition}{QR Decomposition}
+  Factorization of $A$ into an orthogonal matrix $Q$ and an upper
+  triangular matrix $R$.
+  \[
+    A = QR
+  \]
+  Often computed using Gram-Schmidt orthogonalization. Primarily used
+  for solving linear least squares problems and as the basis for the
+  QR algorithm for finding eigenvalues.
+\end{definition}
+
+\begin{theorem}{Eigen-Decomposition}
+  If an $n \times n$ matrix $A$ is diagonalizable (has $n$ linearly
+  independent eigenvectors), it can be decomposed:
+  \[
+    A = V \Lambda V^{-1}
+  \]
+  where $V$ is the matrix of eigenvectors and $\Lambda$ is a diagonal
+  matrix containing the corresponding eigenvalues.
+
+  If $A$ is symmetric, then $V$ is an orthogonal matrix.
+\end{theorem}
+
+\begin{theorem}{Singular Value Decomposition (SVD)}
+  Any $m \times n$ matrix $A$ can be decomposed as:
+  \[
+    A = U \Sigma V^T
+  \]
+  where $U$ is $m \times m$ orthogonal, $V$ is $n \times n$
+  orthogonal, and $\Sigma$ is $m \times n$ diagonal with non-negative
+  real values (singular values $\sigma_i$).
+
+  Used for dimensionality reduction (PCA), low-rank approximation,
+  and finding pseudo-inverses.
+\end{theorem}

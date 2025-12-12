@@ -1,0 +1,11 @@
+\begin{algo}{KMP Algorithm}
+  Prefix function $\pi[i]$ is the length of the longest proper
+  prefix of $S[0 \dots i]$ that is also a suffix of $S[0 \dots i]$.
+\end{algo}
+\inputcpp{src/string/kmp.cpp}{Time: $O(N)$, Space: $O(N)$}
+
+\begin{algo}{Z-Algorithm}
+  $Z[i]$ is the length of the longest common prefix between $S$ and
+  the suffix starting at $S[i]$.
+\end{algo}
+\inputcpp{src/string/z_func.cpp}{Time: $O(N)$}

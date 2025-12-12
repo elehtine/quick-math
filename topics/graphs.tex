@@ -1,0 +1,26 @@
+\begin{theorem}{Handshaking Lemma}
+  Sum of degrees is twice the edges: $\sum_{v \in V} \deg(v) = 2|E|$.
+\end{theorem}
+
+\begin{theorem}{Max-Flow Min-Cut}
+  The max flow from $s$ to $t$ equals the min capacity of an $s-t$ cut.
+\end{theorem}
+
+\begin{definition}{Laplacian Matrix}
+  $L = D - A$. Properties:
+  \begin{itemize}[leftmargin=*, nosep]
+    \item $x^T L x = \sum_{(u,v) \in E} (x_u - x_v)^2$
+    \item Number of connected components = $\dim(\ker(L))$
+  \end{itemize}
+\end{definition}
+
+\begin{algo}{Union-Find (DSU)}
+  Maintains disjoint sets. Operations: \texttt{find} (path compression)
+  and \texttt{unite} (by size).
+\end{algo}
+\inputcpp{src/graph/union_find.cpp}{Time: $\alpha(N)$}
+
+\begin{algo}{Dijkstra's Algorithm}
+  Finds shortest paths from source in graph with non-negative weights.
+\end{algo}
+\inputcpp{src/graph/dijkstra.cpp}{Time: $O(E \log V)$}

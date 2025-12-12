@@ -1,41 +1,46 @@
-\begin{topic}{Probability}
-  Probability space is $(\Omega, \F, \prob)$.
-  Probability function is \emph{any} function $\prob : \F \rightarrow \R$
-  that satisfies
-  \begin{enumerate}
-    \item $\forall E, 0 \leq \prob(E) \leq 1$
-    \item $\prob(\Omega) = 1$
-    \item $\prob \left( \bigcup\limits_{i \geq 1} E_i \right)
-      = \sum\limits_{i \geq 1} \prob(E_i)$
+\begin{definition}{Probability Space}
+  A measure space $(\Omega, \mathcal{F}, \prob)$, where $\Omega$ is the sample space, $\mathcal{F}$ is the $\sigma$-algebra of events $E$, and $\prob : \mathcal{F} \rightarrow [0, 1]$ is the probability measure.
+\end{definition}
+
+\begin{theorem}{Fundamental Identities}
+  \begin{enumerate}[leftmargin=*, nosep]
+    \item Independence $\prob(E \cap F) = \prob(E)\prob(F)$
+    \item Conditional Probability $\prob(E \given F) = \frac{\prob(E \cap F)}{\prob(F)}$
+    \item Total Probability $\prob(B) = \sum_i \prob(B \given E_i) \prob(E_i)$
+    \item Bayes' Law $\prob(E_i \given B)
+      = \frac{ \prob(B \given E_i) \prob(E_i) }{ \sum_j \prob(B \given E_j) \prob(E_j) }$
   \end{enumerate}
-  Events E and F are independent if and only if
-  \[
-    \prob(E \cap F) = \prob(E) \cdot \prob(F)
-  \]
-  Conditional probability
-  \[
-    \prob(E \given F) = \frac{\prob(E \cap F)}{\prob(F)}
-  \]
-  Law of Total Probability
-  \[
-    \prob(B)
-    = \summation \prob(B \cap E_i)
-    = \summation \prob(B \given E_i) \prob(E_i)
-  \]
-  Bayes' Law
-  \[
-    \prob(E_i \given B)
-    = \frac{\prob(E_i \cap B)}{\prob(B)}
-    = \frac{\prob(B \given E_i) \prob(E_i)}
-    {\summation[j = 1] \prob(B \given E_j) \prob(E_j)}
-  \]
-  Linearity of Expectations
-  \[
-    \E \left[ \sum_{i = 1}^n X_i \right]
-    = \sum_{i = 1}^n E[X_i]
-  \]
-  Jensen's Inequality. If $f$ is a convex function, then
-  \[
-    \E[ f(X) ] \geq f( \E[X] )
-  \]
-\end{topic}
+\end{theorem}
+
+\begin{theorem}{Linearity of Expectation}
+  \[ \E \left[ \sum X_i \right] = \sum \E[X_i] \]
+\end{theorem}
+
+\begin{theorem}{Jensen's Inequality}
+  If $f$ is convex, then $\E[ f(X) ] \geq f( \E[X] )$.
+\end{theorem}
+
+\vspace{2pt}
+\begin{center}
+\small
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}llll@{}}
+  \toprule
+  Dist & PMF/PDF & Mean & Var \\
+  \midrule
+  $\bernoulli(p)$ & $p^x (1-p)^{1-x}$ & $p$ & $pq$ \\
+  $\geometric(p)$ & $q^{k-1}p$ & $1/p$ & $q/p^2$ \\
+  $\binomial(n,p)$ & $\binom{n}{k} p^k q^{n-k}$ & $np$ & $npq$ \\
+  $\poisson(\mu)$ & $e^{-\mu}\mu^k / k!$ & $\mu$ & $\mu$ \\
+  $\uniform(a, b)$ & $\frac{1}{b-a}$ & $\frac{a+b}{2}$ & $\frac{(b-a)^2}{12}$ \\
+  $\exponential(\lambda)$ & $\lambda e^{-\lambda x}$ & $1/\lambda$ & $1/\lambda^2$ \\
+  $\normal(\mu, \sigma^2)$ & $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ & $\mu$ & $\sigma^2$ \\
+  $\text{Cauchy}(\alpha, \beta)$ & $\frac{1}{\pi\beta}\left[1+\left(\frac{x-\alpha}{\beta}\right)^2\right]^{-1}$ & Undefined & Undefined \\
+  $\studentt_k$ & $\frac{\Gamma(\frac{k+1}{2})}{\sqrt{k\pi}\Gamma(\frac{k}{2})}\left(1+\frac{t^2}{k}\right)^{-\frac{k+1}{2}}$ & $0$ & $\frac{k}{k-2} \text{ for } k>2$ \\
+  $\gamma(\alpha, \beta)$ & $\frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}$ & $\frac{\alpha}{\beta}$ & $\frac{\alpha}{\beta^2}$ \\
+  $\text{Beta}(\alpha, \beta)$ & $\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha, \beta)}$ & $\frac{\alpha}{\alpha+\beta}$ & $\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$ \\
+  $\chi^2(k)$ & $\frac{x^{k/2 - 1}e^{-x/2}}{2^{k/2}\Gamma(k/2)}$ & $k$ & $2k$ \\
+  \bottomrule
+\end{tabular}
+\end{center}

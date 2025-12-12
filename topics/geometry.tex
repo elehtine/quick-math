@@ -1,0 +1,18 @@
+\begin{algo}{Orientation Check}
+  To determine the orientation of the path from point $p$ to $q$ to
+  $r$, check the sign of the cross product $(q-p) \times (r-q)$:
+  \begin{enumerate}
+    \item $>0$: Left turn (Counter-clockwise)
+    \item $<0$: Right turn (Clockwise)
+    \item $=0$: Collinear
+  \end{enumerate}
+\end{algo}
+
+\begin{theorem}{Polygon Area (Shoelace Formula)}
+  The area of a polygon with vertices $(x_1, y_1) \dots (x_n, y_n)$
+  is given by:
+  \[
+    A = \frac{1}{2} \left| \sum_{i=1}^{n} (x_i y_{i+1} - x_{i+1} y_i) \right|
+  \]
+  where the indices wrap around ($x_{n+1}=x_1$, $y_{n+1}=y_1$).
+\end{theorem}

@@ -1,0 +1,40 @@
+\begin{problem}{Vertex Cover}
+  Given graph $G=(V,E)$, find min-size $S \subset V$ such that
+  $\forall (u,v) \in E$, $u \in S$ or $v \in S$.
+\end{problem}
+\begin{algo}{2-Approximation}
+  Find maximal matching $M$. Output all endpoints of $M$. $|M| \le 2 \cdot OPT$.
+\end{algo}
+
+\begin{problem}{Set Cover}
+  Universe $U$, collection $\mathcal{S}$ of subsets. Find min
+  sub-collection covering $U$.
+\end{problem}
+\begin{algo}{Greedy Strategy}
+  Repeatedly pick set covering most uncovered elements.
+  $\alpha = H_n \approx \ln n$.
+\end{algo}
+
+\begin{problem}{Metric TSP}
+  Complete graph with triangle inequality
+  $c_{ij} \le c_{ik} + c_{kj}$.Find min cost Hamiltonian cycle.
+\end{problem}
+\begin{algo}{Christofides (3/2-Approx)}
+  \begin{enumerate}
+    \item Compute MST $T$.
+    \item Compute min-weight perfect matching $M$ on odd-degree
+      vertices of $T$.
+    \item Compute Eulerian tour on multigraph $T \cup M$.
+    \item Shortcut the tour to skip repeated vertices.
+  \end{enumerate}
+\end{algo}
+
+\begin{problem}{Knapsack}
+  Items with weight $w_i$, value $v_i$. Maximize
+  $\sum v_i$ subject to $\sum w_i \le W$.
+\end{problem}
+\begin{algo}{FPTAS}
+  Scale values $v_i' = \lfloor v_i / K \rfloor$ where
+  $K = \epsilon \max v_i / n$.
+  DP on scaled values. $O(n^3/\epsilon)$.
+\end{algo}

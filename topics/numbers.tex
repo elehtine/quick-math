@@ -1,0 +1,22 @@
+\begin{theorem}{Fermat's Little Theorem}
+  If $p$ is prime:
+  \[
+    a^{p-1} \equiv 1 \pmod p
+  \]
+\end{theorem}
+
+\begin{definition}{Euler's Totient Function}
+  $\phi(n)$ counts the positive integers up to $n$ that are relatively prime to $n$.
+  \[ \phi(n) = n \prod_{p|n} \left(1 - \frac{1}{p}\right) \]
+\end{definition}
+
+\begin{theorem}{Euler's Theorem}
+  If $\gcd(a,n)=1$:
+  \[ a^{\phi(n)} \equiv 1 \pmod n \]
+\end{theorem}
+
+\begin{theorem}{Extended Euclidean Algorithm}
+  For integers $a, b$, there exist integers $x, y$ such that:
+  \[ ax + by = \gcd(a, b) \]
+\end{theorem}
+\inputcpp{src/numbers/euclidean.cpp}{Time: $O(\log N)$, Space: $O(\log N)$}

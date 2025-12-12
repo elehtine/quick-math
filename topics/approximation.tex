@@ -1,0 +1,25 @@
+\begin{definition}{$\alpha$-approximation}
+  An algorithm $A$ is an $\alpha$-approximation for minimization if
+  $A(I) \leq \alpha \cdot OPT(I)$ for all $I$.
+\end{definition}
+
+\begin{definition}{APX}
+  Class of problems admitting a constant-factor approximation (e.g.,
+  Vertex Cover, Metric TSP).
+\end{definition}
+
+\begin{definition}{PTAS (Polynomial Time Approx Scheme)}
+Algorithm $A_\epsilon$ produces $(1+\epsilon)$-solution in time
+$O(n^{f(1/\epsilon)})$.  Example: Euclidean TSP.
+\end{definition}
+
+\begin{definition}{FPTAS (Fully PTAS)}
+  Produces $(1+\epsilon)$-solution in time polynomial in both $n$ and
+  $1/\epsilon$.  Example: Knapsack.
+\end{definition}
+
+\begin{definition}{Inapproximability}
+  Some problems cannot be approximated within factor $\rho$ unless
+  P=NP (e.g., General TSP, Set Cover within $(1-\epsilon)\ln n$).
+\end{definition}
+

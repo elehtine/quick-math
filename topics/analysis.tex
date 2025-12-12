@@ -1,0 +1,44 @@
+\begin{definition}{Metric Space}
+  A pair $(M, d)$ where $d: M \times M \rightarrow [0,\infty)$
+  satisfies:
+  \begin{enumerate}
+    \item $d(x, y) = 0 \iff x = y$
+    \item $d(x, y) = d(y, x)$
+    \item $d(x, z) \leq d(x, y) + d(y, z)$
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}{Mean Value Theorem}
+  If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then
+  $\exists \xi \in (a,b)$ such that:
+  \[
+    f'(\xi) = \frac{f(b) - f(a)}{b - a}
+  \]
+\end{theorem}
+
+\begin{theorem}{Integral MVT}
+  If $f$ is continuous, $\exists z \in [a,b]$ such that:
+  \[
+    \abint f(x) \dx = f(z)(b-a)
+  \]
+\end{theorem}
+
+\begin{theorem}{Taylor's Theorem}
+  $f(x) = T_n(x) + R_n(x)$ where 
+  \[
+    T_n(x) = \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!} (x-x_0)^k.
+  \]
+\end{theorem}
+
+\begin{definition}{Lagrange Remainder}
+  \[
+    R_n(x) = \frac{ f^{(n+1)}(\xi) }{ (n + 1)! } (x - x_0)^{n+1}
+  \]
+\end{definition}
+
+
+\begin{algo}{Newton's Method}
+  To solve $f(x) = 0$, start with $x_0$ and iterate:
+  \[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]
+  Converges quadratically if $f'(x^*) \neq 0$.
+\end{algo}
