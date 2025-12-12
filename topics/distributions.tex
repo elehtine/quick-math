@@ -1,9 +1,13 @@
 \begin{topic}{Distributions}
   \begin{tabular}{cccc}
-    Distribution & PMF & EV & Variance \\
+    Distribution & PMF/PDF & EV & Variance \\
     $\bernoulli(p)$ & $p$ & $p$ & $pq$ \\
-    $\binomial(n,p)$ & $\binom{n}{k} p^k q^{n-k}$ & $np$ & $npq$ \\
     $\geometric(p)$ & $q^{n-1}p$ & $\frac{1}{p}$ & $\frac{1-p}{p^2}$ \\
+    $\binomial(n,p)$ & $\binom{n}{k} p^k q^{n-k}$ & $np$ & $npq$ \\
+    $\poisson(\mu)$ & $\frac{e^{-\mu}\mu^k}{k!}$ & $\mu$ & $\mu$ \\
+    $\uniform[a, b]$ & $\frac{1}{b-a}$ & $\frac{b+a}{2}$ & $\frac{b^2 - a^2}{12}$ \\
+    $\exponential(\lambda)$ & $\lambda e^{-\lambda x}$ &
+    $\frac{1}{\lambda}$ & $\frac{1}{\lambda^2}$ \\
   \end{tabular}
 \end{topic}
 
